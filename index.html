@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bug Zoo 🐛</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div>
+        <h1>Bug Zoo 🐛</h1>
+        <p class="subtitle" id="subtitle">
+          Colección colaborativa para practicar Issues, Pull Requests, reviews y conflictos.
+        </p>
+      </div>
+      <span class="pill" id="statusPill">Estado: listo</span>
+    </header>
+
+    <section class="panel">
+      <button id="btnCapture">🎣 Capturar bug</button>
+      <button id="btnTheme" class="ghost">🌗 Modo día/noche</button>
+      <button id="btnClear" class="danger ghost">🧹 Limpiar</button>
+
+      <select id="filter">
+        <option value="all">Filtro: todos</option>
+        <option value="alta">Peligrosidad: alta</option>
+        <option value="media">Peligrosidad: media</option>
+        <option value="baja">Peligrosidad: baja</option>
+        <option value="fav">Solo favoritos ⭐</option>
+      </select>
+
+      <input id="search" placeholder="Buscar por nombre… (ej: panda)" />
+
+      <div class="counter">
+        <span>Bugs capturados: <b id="count">0</b></span>
+      </div>
+    </section>
+
+    <main>
+      <section id="grid" class="grid"></section>
+      <div id="empty" class="empty" style="display:none">
+        Aún no hay bugs. Presiona <b>“Capturar bug”</b> para crear tarjetas.
+      </div>
+    </main>
+
+    <footer class="footer">
+      <small>Regla: todo cambio entra por PR (nada directo a main).</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
