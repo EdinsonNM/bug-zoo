@@ -103,7 +103,8 @@ flowchart TD
   G --> F
 
   F -->|Aprueba| H[Merge Captain: merge a main]
-  H --> I[Issue se cierra (Closes #X)]
+  H --> I[Issue se cierra 'cierra el issue asociado']
+
 ```
 
 ---
