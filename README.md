@@ -89,7 +89,7 @@ git push -u origin feature/mi-tarea
 
 ---
 
-## 5) Gráfico del flujo (Mermaid)
+## 5) Gráfico del flujo
 
 ```mermaid
 flowchart TD
