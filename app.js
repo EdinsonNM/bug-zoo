@@ -55,6 +55,14 @@ function render() {
     countEl.textContent = String(captured.length);
     empty.style.display = captured.length === 0 ? "block" : "none";
 
+    list = list
+  .map((b, i) => ({...b, _i:i}))
+  .sort((a, b) => {
+    if (a.fav === b.fav) return a._i - b._i;
+    return a.fav ? -1 : 1;
+  })
+  .map(({_i, ...rest}) => rest);
+  
     grid.innerHTML = list.map((b) => `
     <article class="card">
       <div class="titleRow">
