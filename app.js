@@ -4,6 +4,8 @@ const countEl = document.getElementById("count");
 const statusPill = document.getElementById("statusPill");
 const filterEl = document.getElementById("filter");
 const searchEl = document.getElementById("search");
+const orderEl = document.getElementById("order");
+orderEl.addEventListener("change", render);
 
 const KEY = "bugzoo_captured_v1";
 
@@ -44,7 +46,17 @@ function dangerTag(d) {
 function render() {
     const f = filterEl.value;
     const q = (searchEl.value || "").trim().toLowerCase();
-
+    const weight = { alta: 3, media: 2, baja: 1 };
+    if (orderEl.value !== "none"){
+        list = list
+        .map((b, i) => ({...b, _i:i}))
+        .sort((a, b) => {
+        const diff = weight[a.danger] - weight[b.danger];
+        const dir = (orderEl.value === "high") ? -1 : 1;
+        return diff === 0 ? a._i - b._i : diff * dir;
+        })
+        .map(({_i, ...rest}) => rest);
+    }
     let list = [...captured];
 
     if (f === "fav") list = list.filter(b => b.fav);
