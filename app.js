@@ -14,8 +14,8 @@ const BUGS = [
     { id: "iguana", emoji: "🦎", name: "Indentation Iguana", danger: "baja", habitat: "python sin spaces" },
     { id: "shark", emoji: "🦈", name: "Merge Shark", danger: "alta", habitat: "branches sin pull" },
     { id: "owl", emoji: "🦉", name: "Scope Owl", danger: "media", habitat: "variables fuera de lugar" },
+    { id:"Koala", emoji:"🐨", name:"Memory Leak Koala", danger:"alta", habitat:"funciones anidadas" },
 ];
-
 let captured = load();
 
 function save() {
